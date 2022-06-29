@@ -3,7 +3,7 @@ const webcamElement = document.getElementById("webcam")
 
 let SonrisaImgs = Array.from(document.querySelectorAll('.sonrisa'));
 let SorpresaImgs = Array.from(document.querySelectorAll('.sorpresa'));
-let LenguaImgs = Array.from(document.querySelectorAll('.lengua'));
+let LenguaImgs = Array.from(document.querySelectorAll('.triste'));
 
 let net
 
@@ -29,7 +29,7 @@ async function app() {
   
   document.getElementById("sonrisa").addEventListener("click", () => addExample(0))
   document.getElementById("sorpresa").addEventListener("click", () => addExample(1))
-  document.getElementById("lengua").addEventListener("click", () => addExample(2))
+  document.getElementById("triste").addEventListener("click", () => addExample(2))
 
   // ENTRENAMIENTO INICIAL
   SonrisaImgs.map((elementHTML) => {
@@ -56,7 +56,7 @@ async function app() {
 
       const result = await classifier.predictClass(activation)
 
-      const classes = ["😃", "😮", "😛"]
+      const classes = ["😃", "😮", "🙁"]
 
       document.getElementById("console").innerText = `
                 prediction: ${classes[result.label]}\n
