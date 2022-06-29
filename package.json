@@ -1,0 +1,22 @@
+{
+  "name": "neuronaia",
+  "version": "1.0.0",
+  "description": "Neurona programa en JavaScript utilizando la librería Tensorflow para el reconocimiento y asociación de emociones (desde la webcam) con emojis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanesGalvis/Neurona_Tensorflow.git"
+  },
+  "keywords": [
+    "Tensorflow"
+  ],
+  "author": "Juan Galvis - Santiago Restrepo - Daniela Jurado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanesGalvis/Neurona_Tensorflow/issues"
+  },
+  "homepage": "https://github.com/JuanesGalvis/Neurona_Tensorflow#readme"
+}

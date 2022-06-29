@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <style>
+      img {
+        width: 100px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="console"></div>
+    <!-- Add an image that we will use to test -->
+    <video
+      autoplay
+      playsinline
+      muted
+      id="webcam"
+      width="224"
+      height="224"
+    ></video>
+
+    <button id="sonrisa">Add 😃</button>
+    <button id="sorpresa">Add 😮</button>
+    <button id="lengua">Add 😛</button>
+
+    <h1>ENTRENAMIENTO</h1>
+    <h2>😃</h2>
+    <img crossorigin src="https://thumbs.dreamstime.com/b/cara-sonriente-de-la-persona-diversa-108427785.jpg" class="sonrisa">
+    <img crossorigin src="https://thumbs.dreamstime.com/b/persona-sonriente-4049382.jpg" class="sonrisa">
+    <img crossorigin src="https://previews.123rf.com/images/rawpixel/rawpixel1705/rawpixel170563050/78885216-disparo-de-estudio-de-retrato-de-personas-con-expresi%C3%B3n-de-cara-sonriente.jpg" class="sonrisa">
+    <img crossorigin src="https://previews.123rf.com/images/rawpixel/rawpixel1704/rawpixel170441704/76561515-retrato-de-personas-estudio-disparar-con-expresi%C3%B3n-de-cara-sonriente.jpg" class="sonrisa">
+    <h2>😮</h2>
+    <img crossorigin src="https://previews.123rf.com/images/photocatcher/photocatcher1709/photocatcher170900250/86438009-retrato-de-hombre-barbudo-con-la-boca-abierta-y-emoci%C3%B3n-asombrada-en-la-cara.jpg" class="sorpresa">
+    <img crossorigin src="https://previews.123rf.com/images/filistimlyanin/filistimlyanin1708/filistimlyanin170800003/83264138-portrait-d-un-jeune-homme-surpris-avec-la-bouche-ouverte-isol%C3%A9-sur-gris.jpg" class="sorpresa">
+    <img crossorigin src="https://previews.123rf.com/images/bds/bds1502/bds150203142/36709103-jeune-homme-choqu%C3%A9-beau-avec-la-bouche-ouverte-.jpg" class="sorpresa">
+    <img crossorigin src="https://thumbs.dreamstime.com/b/surpise-choqu%C3%A9-la-bouche-d-homme-ouverte-50265473.jpg" class="sorpresa">
+    <img crossorigin src="https://media.istockphoto.com/photos/shocked-silent-young-man-put-his-hands-to-his-face-surprised-open-picture-id1248310137" class="sorpresa">
+    <h2>😛</h2>
+    <img crossorigin src="https://thumbs.dreamstime.com/b/sacando-la-lengua-36208737.jpg" class="lengua">
+    <img crossorigin src="https://thumbs.dreamstime.com/b/sacando-la-lengua-36208698.jpg" class="lengua">
+    <img crossorigin src="https://st2.depositphotos.com/3811801/8694/i/950/depositphotos_86945358-stock-photo-beautiful-woman-sticking-out-her.jpg" class="lengua">
+    <img crossorigin src="https://thumbs.dreamstime.com/b/girl-tongue-piercing-2278927.jpg" class="lengua">
+    <img crossorigin src="https://st.focusedcollection.com/14026668/i/650/focused_481668934-stock-photo-woman-sticking-out-tongue-blue.jpg" class="lengua">
+    
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+  </body>
+</html>
