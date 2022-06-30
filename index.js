@@ -5,6 +5,8 @@ let SonrisaImgs = Array.from(document.querySelectorAll('.sonrisa'));
 let SorpresaImgs = Array.from(document.querySelectorAll('.sorpresa'));
 let LenguaImgs = Array.from(document.querySelectorAll('.triste'));
 
+let loading = document.getElementById('loading');
+
 let net
 
 async function app() {
@@ -13,16 +15,15 @@ async function app() {
   net = await mobilenet.load()
 
   console.log("Loaded model")
-
+  loading.style.display = 'none';
+  window.scrollTo(0, 0);
   
   const webcam = await tf.data.webcam(webcamElement)
   
   const addExample = async (classId) => {
     
     const img = await webcam.capture()
-    
     const activation = net.infer(img, true)
-    console.log("Agregado");
     classifier.addExample(activation, classId)
     img.dispose()
   }
@@ -59,8 +60,8 @@ async function app() {
       const classes = ["😃", "😮", "🙁"]
 
       document.getElementById("console").innerText = `
-                prediction: ${classes[result.label]}\n
-                probabilty: ${result.confidences[result.label]}
+                ${classes[result.label]}\n
+                ${(result.confidences[result.label]*100).toFixed(2)+"%"}
             `
 
       img.dispose()
