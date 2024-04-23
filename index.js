@@ -56,8 +56,35 @@ async function app() {
     classifier.addExample(logits0, 2);
   })
 
+  navigator.mediaDevices.enumerateDevices()
+  .then(devices => {
+    const cameras = devices.filter(device => device.kind === 'videoinput');
+    // Imprime información sobre las cámaras disponibles en la consola
+    console.log(cameras);
+
+    // Puedes seleccionar la cámara que desees, por ejemplo, la tercera cámara (índice 2)
+    const selectedCamera = cameras[0]; // Esto es solo un ejemplo, puedes elegir la cámara que desees
+
+    // Solicita acceso a la cámara seleccionada
+    return navigator.mediaDevices.getUserMedia({
+      video: {
+        deviceId: selectedCamera.deviceId
+      }
+    });
+  })
+  .then(stream => {
+    // Aquí puedes utilizar el stream de la cámara
+    const videoElement = document.getElementById('webcam');
+    videoElement.srcObject = stream;
+    videoElement.play();
+  })
+  .catch(error => {
+    console.error('Error al acceder a la cámara:', error);
+  });
+
   while (true) {
     if (classifier.getNumClasses() > 0) {
+      
       const img = await webcam.capture()
 
       const activation = net.infer(img, "conv_preds")
